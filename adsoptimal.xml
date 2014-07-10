@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content">
+        <name>AdsOptimal - Mobile Ad</name>
+        <author>Sakares Saengkaew</author>
+        <creationDate>July 10th, 2014</creationDate>
+        <copyright>Copyright (C) 2014 Social Nation Inc. All rights reserved.</copyright>
+        <license>GPL-2.0+</license>
+        <authorEmail>team@adsoptimal.com</authorEmail>
+        <authorUrl>http://www.adsoptimal.com</authorUrl>
+        <version>1.0</version>
+        <description>EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!</description>
+        <files>
+                <filename plugin="adsoptimal">adsoptimal.php</filename>
+                <filename>index.html</filename>
+        </files>
+</extension>
