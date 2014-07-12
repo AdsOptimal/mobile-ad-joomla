@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="content">
-        <name>AdsOptimal - Mobile Ad</name>
-        <author>Sakares Saengkaew</author>
-        <creationDate>July 10th, 2014</creationDate>
-        <copyright>Copyright (C) 2014 Social Nation Inc. All rights reserved.</copyright>
-        <license>GPL-2.0+</license>
-        <authorEmail>team@adsoptimal.com</authorEmail>
-        <authorUrl>http://www.adsoptimal.com</authorUrl>
-        <version>1.0</version>
-        <description>EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!</description>
-        <files>
-                <filename plugin="adsoptimal">adsoptimal.php</filename>
-                <filename>index.html</filename>
-        </files>
+	<name>AdsOptimal - Mobile Ad Plugin</name>
+	<author>Social Nation Inc.</author>
+	<creationDate>July 10th, 2014</creationDate>
+	<copyright>Copyright (C) 2014 Social Nation Inc. All rights reserved.</copyright>
+	<license>GPL-2.0+</license>
+	<authorEmail>team@adsoptimal.com</authorEmail>
+	<authorUrl>http://www.adsoptimal.com</authorUrl>
+	<version>1.0</version>
+	<description>
+		<![CDATA[
+
+		<div style="margin: 0 0 1em 2em; font: 12px sans-serif; float: right; width: 275px; box-shadow: 0 0 2px #ddd; border-radius: 6px; background-color: #fff; border: solid 1px #ddd; padding: 1em;">
+			<center><a href="http://www.adsoptimal.com/">Ads Optimal Logo here !</a></center>
+			<br />
+			
+			<br />
+			<a href="" style="background: url('') left center no-repeat; padding: 5px 5px 5px 20px;" target="_blank">Support Place here !</a><br /><br />
+			<a href="https://github.com/AdsOptimal/mobile-ad-joomla" style="background: url('https://github.com/favicon.ico') left center no-repeat; background-size: 16px; padding: 5px 5px 5px 20px;" target="_blank">Fork us on Github</a><br /><br />
+			<a href="http://www.adsoptimal.com/joomla" style="background: url('http://www.joomla.org/templates/joomla12/favicon.ico') left center no-repeat; background-size: 16px; padding: 5px 5px 5px 20px;" target="_blank">Checkfront Joomla Setup Guide</a>
+		</div>		
+		
+		
+		EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
+		<br />
+		<br />
+		To get started, create and get the code <a href="http://www.adsoptimal.com/" target="_blank">your AdsOptimal account</a>.
+		<br />
+		<br />
+		To start monetizing, conenct to your <strong>AdsOptimal account</strong>, then configure at the <strong>get code</strong> page, get your code and paste the shortcode generated below into a script runner box:
+		<br />
+		<br />
+		<button class="btn btn-large" rel="adsoptimal" onclick="Joomla.popupWindow('http://www.adsoptimal.com/login'), 'Checkfront', 1150, 600, 1);return false" ><span class="icon-out-2"></span>&nbsp;Code Generator</button>
+		&nbsp;Click to retreive your code.
+		<br />
+		<br />
+		]]>
+	</description>
+	<files>
+		<filename plugin="adsoptimal">adsoptimal.php</filename>
+	</files>
 </extension>
