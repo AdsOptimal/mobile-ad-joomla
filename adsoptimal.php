@@ -5,15 +5,15 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class plgContentAdsoptimal extends JPlugin
 {
-    public function onContentPrepare($context, &$article, &$params, $limitstart)
-    {
+    public function onContentAfterDisplay($context, &$article, &$params, $limitstart){
     	$doc = JFactory::getDocument();
-		$js = "
-				alert('I am an alert box!, Injected complete !');
-				";
-		$doc->addScriptDeclaration($js);
+		$doc->addScriptDeclaration($this->getAdsOptimalCode());
 	}
 
+	protected function getAdsOptimalCode(){
+		$code = $this->params->get('AdsOptimal_code');
+		return $code;
+	}
 }
 
 ?>

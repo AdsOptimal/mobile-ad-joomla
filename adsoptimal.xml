@@ -28,10 +28,10 @@
 		To get started, create and get the code <a href="http://www.adsoptimal.com/" target="_blank">your AdsOptimal account</a>.
 		<br />
 		<br />
-		To start monetizing, conenct to your <strong>AdsOptimal account</strong>, then configure at the <strong>get code</strong> page, get your code and paste the shortcode generated below into a script runner box:
+		To start monetizing, conenct to your <strong>AdsOptimal account</strong>, then configure at the <strong>get code</strong> page, get your code and paste the code generated below into a textbox on plugin tab (left tab):
 		<br />
 		<br />
-		<button class="btn btn-large" rel="adsoptimal" onclick="Joomla.popupWindow('http://www.adsoptimal.com/login'), 'Checkfront', 1150, 600, 1);return false" ><span class="icon-out-2"></span>&nbsp;Code Generator</button>
+		<button class="btn btn-large" rel="adsoptimal" onclick="Joomla.popupWindow('http://www.adsoptimal.com/login', 'AdsOptimal', 1150, 600, 1);return false" ><span class="icon-out-2"></span>&nbsp;Code Generator</button>
 		&nbsp;Click to retreive your code.
 		<br />
 		<br />
@@ -40,4 +40,17 @@
 	<files>
 		<filename plugin="adsoptimal">adsoptimal.php</filename>
 	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="AdsOptimal_code" type="textarea"
+					default=""
+					description="Your AdsOptimal Code from 'GET CODE' Tab"
+					label="Put your AdsOptimal Code here"
+					rows="10"
+					>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
 </extension>
