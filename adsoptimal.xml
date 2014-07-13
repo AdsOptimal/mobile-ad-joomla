@@ -31,7 +31,7 @@
 		To start monetizing, conenct to your <strong>AdsOptimal account</strong>, then configure at the <strong>get code</strong> page, get your code and paste the code generated below into a textbox on plugin tab (left tab):
 		<br />
 		<br />
-		<button class="btn btn-large" rel="adsoptimal" onclick="Joomla.popupWindow('http://www.adsoptimal.com/login', 'AdsOptimal', 1150, 600, 1);return false" ><span class="icon-out-2"></span>&nbsp;Code Generator</button>
+		<button class="btn btn-large" rel="adsoptimal" onclick="Joomla.popupWindow('http://www.adsoptimal.com/customer/get_code', 'AdsOptimal', 1150, 600, 1);return false" ><span class="icon-out-2"></span>&nbsp;Code Generator</button>
 		&nbsp;Click to retreive your code.
 		<br />
 		<br />
