@@ -43,13 +43,16 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="AdsOptimal_code" type="textarea"
+				<!--<field name="AdsOptimal_code" type="textarea"
 					default=""
 					description="Your AdsOptimal Code from 'GET CODE' Tab"
 					label="Put your AdsOptimal Code here"
 					rows="10"
 					>
-				</field>
+				</field>-->
+				<field name="adsformat" type="adsformat" label="Ad Format"
+					description="Ad Format"
+					required="true" />
 			</fieldset>
 		</fields>
 	</config>
