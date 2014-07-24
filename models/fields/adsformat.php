@@ -11,7 +11,7 @@ class JFormFieldAdsFormat extends JFormField {
         public function getInput() {
                 return '
               <div style="height: 500px; overflow: auto; border: solid 1px #cccccc;">
-                <h3 style="text-align: center; padding-bottom: 10px; border-bottom: solid 1px #cccccc;">Special</h3>
+                <h3 style="text-align: center; padding-bottom: 10px; border-bottom: solid 1px #cccccc;">Recommended</h3>
                 <div class="container-fluid" style="padding-bottom: 10px;">
                   <div style="width: 140px; margin: 10px; float: left;">
                     <button type="button" class="btn format-choice pre-selected active btn-success" onclick="refreshPreview(this);" format="AUTOMATE" data-id="48" data-type="AUTOMATE" data-category="0" style="padding: 0;">
