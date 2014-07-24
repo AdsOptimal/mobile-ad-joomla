@@ -50,9 +50,23 @@
 					rows="10"
 					>
 				</field>-->
-				<field name="adsformat" type="adsformat" label="Ad Format"
-					description="Ad Format"
+				<field name="adsaccount" type="adsaccount" label="AdsOptimal Account"
+					description="AdsOptimal Account"
 					required="true" />
+				<field name="adsformat" type="adsformat" label="Ad Format"
+					description="Ad Format" />
+				<field name="adslabel" type="adsonoff" label="Ad Label"
+					description="Ad Label" />
+				<field name="adsclose" type="adsonoff" label="Extra Close Button"
+					description="Extra Close Button" />
+				<field name="adsdisplay" type="adsdisplaytiming" label="Ad Display Timing"
+					description="Ad Display Timing" />
+				<field name="adstiming" type="adstiming" label="Timing Option"
+					description="Timing Option" />
+				<field name="adsscroll" type="adsscroll" label="Scroll Option"
+					description="Timing Option" />
+				<field name="adsfrequency" type="adsdisplayfrequency" label="Display Frequency"
+					description="Display Frequency" />
 			</fieldset>
 		</fields>
 	</config>
