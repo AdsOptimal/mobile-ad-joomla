@@ -19,7 +19,7 @@ class JFormFieldAdsDisplayFrequency extends JFormField {
                         <option value="15" '.($this->value == '15' ? 'selected' : '').'>every 15 minutes</option>
                         <option value="30" '.($this->value == '30' ? 'selected' : '').'>every 30 minutes</option>
                         <option value="45" '.($this->value == '45' ? 'selected' : '').'>every 45 minutes</option>
-                        <option value="60" '.(($this->value == '60' || empty($this->value)) ? 'selected' : '').'>hourly</option>
+                        <option value="60" '.(($this->value == '60' || $this->value == null) ? 'selected' : '').'>hourly</option>
                         <option value="120" '.($this->value == '120' ? 'selected' : '').'>every 2 hours</option>
                         <option value="180" '.($this->value == '180' ? 'selected' : '').'>every 3 hours</option>
                         <option value="240" '.($this->value == '240' ? 'selected' : '').'>every 4 hours</option>
