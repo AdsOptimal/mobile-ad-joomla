@@ -14,7 +14,7 @@
 		<div style="margin: 0 0 1em 2em; font: 12px sans-serif; float: right; width: 275px; box-shadow: 0 0 2px #ddd; border-radius: 6px; background-color: #fff; border: solid 1px #ddd; padding: 1em;">
 			<center><a href="http://www.adsoptimal.com/">Ads Optimal Logo here !</a></center>
 			<br />
-			
+		
 			<br />
 			<a href="" style="background: url('') left center no-repeat; padding: 5px 5px 5px 20px;" target="_blank">Support Place here !</a><br /><br />
 			<a href="https://github.com/AdsOptimal/mobile-ad-joomla" style="background: url('https://github.com/favicon.ico') left center no-repeat; background-size: 16px; padding: 5px 5px 5px 20px;" target="_blank">Fork us on Github</a><br /><br />
@@ -23,16 +23,6 @@
 		
 		
 		EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
-		<br />
-		<br />
-		To get started, create and get the code <a href="http://www.adsoptimal.com/" target="_blank">your AdsOptimal account</a>.
-		<br />
-		<br />
-		To start monetizing, conenct to your <strong>AdsOptimal account</strong>, then configure at the <strong>get code</strong> page, get your code and paste the code generated below into a textbox on plugin tab (left tab):
-		<br />
-		<br />
-		<button class="btn btn-large" rel="adsoptimal" onclick="Joomla.popupWindow('http://www.adsoptimal.com/customer/get_code', 'AdsOptimal', 1150, 600, 1);return false" ><span class="icon-out-2"></span>&nbsp;Code Generator</button>
-		&nbsp;Click to retreive your code.
 		<br />
 		<br />
 		]]>
