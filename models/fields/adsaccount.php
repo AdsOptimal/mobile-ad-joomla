@@ -178,6 +178,7 @@ var AdsOptimal = {
                         }
                    });
                    $(ifrm.document).find("body>div").css("width", "800px");
+                   AdsOptimal.settingsInput = $(ifrm.document).find("[name=\"adsoptimal_settings\"]");
                 }
                 
                 ifrm.document.open();
@@ -188,16 +189,14 @@ var AdsOptimal = {
                     "<script type=\"text/javascript\">window.AdsOptimal = window.parent.AdsOptimal;" +
                     "</" + "script></head>" +
                     "<body style=\"margin:0; background:none transparent;\" class=\"adsoptimal-injection-container\">" +
-                    "<form class=\"adsoptimal_form\" onsubmit=\"return AdsOptimal.savePostSettings(true);\"><input type=\"hidden\" name=\"adsoptimal_settings\"></form>" +
+                    "<form class=\"adsoptimal_form\" onsubmit=\"return AdsOptimal.savePostSettings(true);\">" +
+                    "<input type=\"hidden\" name=\"adsoptimal_settings\" value=\"" + $(".adsoptimal_settings").val() + "\"></form>" +
                     response + "<" + "script>" +
                     "AdsOptimal.fixContent();" +
+                    "AdsOptimal.restoreSettings();" +
                     "</" + "script></body></html>"
                 );
                 ifrm.document.close();
-                
-                AdsOptimal.settingsInput = $(ifrm.document).find("[name=\'adsoptimal_settings\']");
-                AdsOptimal.settingsInput.val($(".adsoptimal_settings").val());
-						  	AdsOptimal.restoreSettings();
 					  	}
 				  });
         }
