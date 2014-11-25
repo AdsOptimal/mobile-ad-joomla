@@ -44,7 +44,7 @@ var AdsOptimal = {
 	openOAuth: (function() {
 		var popupWindow=null;
 		return function(redirect_uri, logout) {
-			url = settings.host + "/oauth/authorize?client_id=" + settings.clientId + "&redirect_uri=" + encodeURIComponent(redirect_uri) + "&response_type=token";
+			url = settings.host + "/oauth/authorize?ss=joomla&client_id=" + settings.clientId + "&redirect_uri=" + encodeURIComponent(redirect_uri) + "&response_type=token";
 			if (logout) { url = settings.host + "/oauth/logout?redirect=" + encodeURIComponent(url); }
 			
 			if (popupWindow && !popupWindow.closed) { popupWindow.focus(); }
