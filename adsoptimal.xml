@@ -15,10 +15,19 @@
 	</description>
 	<files>
 		<filename plugin="adsoptimal">adsoptimal.php</filename>
+		<filename plugin="adsoptimal">models/fields/adsaccount.php</filename>
+		<filename plugin="adsoptimal">models/fields/adsformat.php</filename>
 	</files>
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+				<!--<field name="AdsOptimal_code" type="textarea"
+					default=""
+					description="Your AdsOptimal Code from 'GET CODE' Tab"
+					label="Put your AdsOptimal Code here"
+					rows="10"
+					>
+				</field>-->
 				<field name="adsaccount" type="adsaccount" label="AdsOptimal Account"
 					description="AdsOptimal Account"
 					required="true" />

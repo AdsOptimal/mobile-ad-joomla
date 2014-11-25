@@ -35,8 +35,8 @@ class JFormFieldAdsAccount extends JFormField {
               <script type="text/javascript">
 window.$ = jQuery; jQuery.noConflict = function() { return window.$; };
 var settings = {
-	"host":     "//www.adsoptimal.com"
-, "clientId": "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9"
+	"host":     "//www.adsoptimal.com",
+  "clientId": "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9"
 };
 var VIEW = { AUTHENTICATE:0, AUTHENTICATING:1, AUTHENTICATED:2 };
 
@@ -44,14 +44,14 @@ var AdsOptimal = {
 	openOAuth: (function() {
 		var popupWindow=null;
 		return function(redirect_uri, logout) {
-			url = settings.host + "/oauth/authorize?ss=joomla&client_id=" + settings.clientId + "&redirect_uri=" + encodeURIComponent(redirect_uri) + "&response_type=token";
-			if (logout) url = settings.host + "/oauth/logout?redirect=" + encodeURIComponent(url);
+			url = settings.host + "/oauth/authorize?client_id=" + settings.clientId + "&redirect_uri=" + encodeURIComponent(redirect_uri) + "&response_type=token";
+			if (logout) { url = settings.host + "/oauth/logout?redirect=" + encodeURIComponent(url); }
 			
-			if(popupWindow && !popupWindow.closed) popupWindow.focus();
-			else popupWindow = window.open(url,"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=515, height=330,top=" + (screen.height - 330)/2 + ",left=" + (screen.width - 515)/2);
+			if (popupWindow && !popupWindow.closed) { popupWindow.focus(); }
+			else { popupWindow = window.open(url,"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=515, height=330,top=" + (screen.height - 330)/2 + ",left=" + (screen.width - 515)/2); }
 			
 			function parent_disable() {
-				if(popupWindow && !popupWindow.closed) popupWindow.focus();
+				if (popupWindow && !popupWindow.closed) { popupWindow.focus(); }
 			}
 			
 			$(document.body).bind("focus", parent_disable);
@@ -78,11 +78,13 @@ var AdsOptimal = {
 			case VIEW.AUTHENTICATED:
 				$(".authenticated").show();
 				break;
+      default:
+        break;
 		}
 	},
 	
 	updateSettings: function() {
-		if (window.disabledUpdateSettings) return;
+		if (window.disabledUpdateSettings) { return; }
 		AdsOptimal.saveSettings(false);
 	},
 	saveSettings: function(save) {
@@ -96,18 +98,19 @@ var AdsOptimal = {
     AdsOptimal.switchView(VIEW.AUTHENTICATING);
     
 		$.ajax({
-				url: settings.host + "/api/v1/publisher_info"
-			, beforeSend: function (xhr) {
+				url: settings.host + "/api/v1/publisher_info",
+        beforeSend: function (xhr) {
 					xhr.setRequestHeader("Authorization", "Bearer " + token);
 					xhr.setRequestHeader("Accept",        "application/json");
-				}
-			, success: function (response) {
+				},
+        success: function (response) {
 					if (response.data) {
 						AdsOptimal.switchView(VIEW.AUTHENTICATED);
 						$("[name=\"adsoptimal_access_token\"]").val(token);
 						$("[name=\"adsoptimal_email\"]").val(response.data.email);
 						$("[name=\"adsoptimal_publisher_id\"]").val(response.data.publisher_id);
 						AdsOptimal.updateSettings();
+            AdsOptimal.initialize();
 					} else {
 						AdsOptimal.switchView(VIEW.AUTHENTICATE);
 					}
@@ -145,12 +148,12 @@ var AdsOptimal = {
 				$(".earning").text("...");
 				if ($("[name=\"adsoptimal_access_token\"]").val()) {
 					$.ajax({
-							url: settings.host + "/api/v1/insight_info"
-						, beforeSend: function (xhr) {
+							url: settings.host + "/api/v1/insight_info",
+						  beforeSend: function (xhr) {
 								xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 								xhr.setRequestHeader("Accept",        "application/json");
-							}
-						, success: function (response) {
+							},
+						  success: function (response) {
 								if (response.data) {
 									$(".earning").text("Pending Payout: $" + response.data.pending_payout.toFixed(2));
 								} else {
@@ -158,14 +161,14 @@ var AdsOptimal = {
 								}
 							}
 					});
-				
+          
 				  $.ajax({
-					  	url: settings.host + "/api/v1/settings_injection.html"
-					  , beforeSend: function (xhr) {
+					  	url: settings.host + "/api/v1/settings_injection.html",
+					    beforeSend: function (xhr) {
 					  		xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 					  		xhr.setRequestHeader("Accept",        "text/html");
-					  	}
-					  , success: function (response) {
+					  	},
+					    success: function (response) {
                 var $iframe = $(".adsoptimal-injection-format");
                 var ifrm = $iframe[0];
                 ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
@@ -182,8 +185,7 @@ var AdsOptimal = {
                 }
                 
                 ifrm.document.open();
-                ifrm.document.write(
-                    "<html><head><script src=\"//code.jquery.com/jquery-1.11.0.min.js\"></" + "script>" +
+                ifrm.document.write("<html><head><script src=\"//code.jquery.com/jquery-1.11.0.min.js\"></" + "script>" +
                     "<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\">" +
                     "<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js\"></" + "script>" +
                     "<script type=\"text/javascript\">window.AdsOptimal = window.parent.AdsOptimal;" +
@@ -194,8 +196,7 @@ var AdsOptimal = {
                     response + "<" + "script>" +
                     "AdsOptimal.fixContent();" +
                     "AdsOptimal.restoreSettings();" +
-                    "</" + "script></body></html>"
-                );
+                    "</" + "script></body></html>");
                 ifrm.document.close();
 					  	}
 				  });
@@ -220,7 +221,13 @@ AdsOptimal.savePostSettings = function(submit) {
   return false;
 }
 AdsOptimal.restorePreSettings = function(save) {
-  var data = JSON.parse($("#'.$this->id.'").val());
+  var data = {
+    "access_token": "",
+    "email": "",
+    "publisher_id": ""
+  };
+  try { var data = JSON.parse($("#'.$this->id.'").val()); }
+  catch(ex) { return; }
   $("[name=\"adsoptimal_access_token\"]").val(data.access_token);
   $("[name=\"adsoptimal_email\"]").val(data.email);
   $("[name=\"adsoptimal_publisher_id\"]").val(data.publisher_id);
