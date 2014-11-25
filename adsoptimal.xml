@@ -10,17 +10,6 @@
 	<version>1.0</version>
 	<description>
 		<![CDATA[
-		
-		<div style="margin: 0 0 1em 2em; font: 12px sans-serif; float: right; width: 275px; box-shadow: 0 0 2px #ddd; border-radius: 6px; background-color: #fff; border: solid 1px #ddd; padding: 1em;">
-			<center><a href="http://www.adsoptimal.com/">Ads Optimal Logo here !</a></center>
-			<br />
-			
-			<br />
-			<a href="" style="background: url('') left center no-repeat; padding: 5px 5px 5px 20px;" target="_blank">Support Place here !</a><br /><br />
-			<a href="https://github.com/AdsOptimal/mobile-ad-joomla" style="background: url('https://github.com/favicon.ico') left center no-repeat; background-size: 16px; padding: 5px 5px 5px 20px;" target="_blank">Fork us on Github</a><br /><br />
-			<a href="http://www.adsoptimal.com/joomla" style="background: url('http://www.joomla.org/templates/joomla12/favicon.ico') left center no-repeat; background-size: 16px; padding: 5px 5px 5px 20px;" target="_blank">Checkfront Joomla Setup Guide</a>
-		</div>
-		
 		EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
 		]]>
 	</description>
@@ -30,13 +19,6 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<!--<field name="AdsOptimal_code" type="textarea"
-					default=""
-					description="Your AdsOptimal Code from 'GET CODE' Tab"
-					label="Put your AdsOptimal Code here"
-					rows="10"
-					>
-				</field>-->
 				<field name="adsaccount" type="adsaccount" label="AdsOptimal Account"
 					description="AdsOptimal Account"
 					required="true" />
