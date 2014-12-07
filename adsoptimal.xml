@@ -10,7 +10,7 @@
 	<version>1.0</version>
 	<description>
 		<![CDATA[
-		Reminder: Don't forget to enable Plugin! ( Extensions > Plugin Manager > Enable plugin "AdsOptimal - Mobile Ad Plugin" )
+		<div id="notification"><h3 style="color:blue">Reminder: Don't forget to enable Plugin!</h3><h4 style="color:red">Extensions > Plugin Manager > Enable plugin "AdsOptimal - Mobile Ad Plugin"</h4></div>
 		]]>
 	</description>
 	<files>
@@ -28,10 +28,10 @@
 					rows="10"
 					>
 				</field>-->
-				<field name="adsaccount" type="adsaccount" label="AdsOptimal Account"
+				<field name="adsaccount" type="adsaccount" label="AdsOptimal Account" stype="visibility:hidden;"
 					description="AdsOptimal Account"
 					required="true" />
-				<field name="adsformat" type="adsformat" label=""
+				<field name="adsformat" type="adsformat" label="" stype="visibility:hidden;"
 					description="Ad Format" />
 			</fieldset>
 		</fields>

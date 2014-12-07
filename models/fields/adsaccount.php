@@ -245,6 +245,8 @@ $(document).ready(function() {
         oldFn.apply(this, args);
      }, 110);
   };
+  
+  $("#notification").hide();
 
   AdsOptimal.initialize();
 });
