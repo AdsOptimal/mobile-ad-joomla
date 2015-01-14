@@ -7,10 +7,10 @@
 	<license>GPL-2.0+</license>
 	<authorEmail>team@adsoptimal.com</authorEmail>
 	<authorUrl>http://www.adsoptimal.com</authorUrl>
-	<version>1.0</version>
+	<version>1.1</version>
 	<description>
 		<![CDATA[
-		EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
+		<div id="notification"><h3 style="color:blue">Reminder: Don't forget to enable Plugin!</h3><h4 style="color:red">Extensions > Plugin Manager > Enable plugin "AdsOptimal - Mobile Ad Plugin"</h4></div>
 		]]>
 	</description>
 	<files>
@@ -28,10 +28,10 @@
 					rows="10"
 					>
 				</field>-->
-				<field name="adsaccount" type="adsaccount" label="AdsOptimal Account"
+				<field name="adsaccount" type="adsaccount" label="AdsOptimal Account" stype="visibility:hidden;"
 					description="AdsOptimal Account"
 					required="true" />
-				<field name="adsformat" type="adsformat" label=""
+				<field name="adsformat" type="adsformat" label="" stype="visibility:hidden;"
 					description="Ad Format" />
 			</fieldset>
 		</fields>

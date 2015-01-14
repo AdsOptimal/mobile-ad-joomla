@@ -20,8 +20,8 @@ class plgContentAdsoptimal extends JPlugin
 
 	protected function getAdsOptimalCode(){
 		$adsaccount = json_decode(rawurldecode($this->params->get('adsformat')), true);
-		if ($adsaccount['code-textarea']) {
-			$code = $adsaccount['code-textarea'];
+		if ($adsaccount['jscode']) {
+			$code = $adsaccount['jscode'];
 			
 			$code = str_replace("<script type='text/javascript'>","",$code);
 			$code = str_replace("</script>","",$code);

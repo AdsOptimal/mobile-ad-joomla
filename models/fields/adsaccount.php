@@ -36,7 +36,8 @@ class JFormFieldAdsAccount extends JFormField {
 window.$ = jQuery; jQuery.noConflict = function() { return window.$; };
 var settings = {
 	"host":     "//www.adsoptimal.com",
-  "clientId": "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9"
+  "clientId": "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9",
+	"api": "v3"
 };
 var VIEW = { AUTHENTICATE:0, AUTHENTICATING:1, AUTHENTICATED:2 };
 
@@ -98,7 +99,7 @@ var AdsOptimal = {
     AdsOptimal.switchView(VIEW.AUTHENTICATING);
     
 		$.ajax({
-				url: settings.host + "/api/v1/publisher_info",
+				url: settings.host + "/api/" + settings.api + "/publisher_info",
         beforeSend: function (xhr) {
 					xhr.setRequestHeader("Authorization", "Bearer " + token);
 					xhr.setRequestHeader("Accept",        "application/json");
@@ -119,7 +120,7 @@ var AdsOptimal = {
 	},
 	initialize: function() {
     AdsOptimal.restorePreSettings();
-  
+
 		$(".connect").click(function() {
 			AdsOptimal.openOAuth(location.href.replace("#" + location.hash,""), false);
 		});
@@ -148,7 +149,7 @@ var AdsOptimal = {
 				$(".earning").text("...");
 				if ($("[name=\"adsoptimal_access_token\"]").val()) {
 					$.ajax({
-							url: settings.host + "/api/v1/insight_info",
+							url: settings.host + "/api/" + settings.api + "/insight_info",
 						  beforeSend: function (xhr) {
 								xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 								xhr.setRequestHeader("Accept",        "application/json");
@@ -163,7 +164,7 @@ var AdsOptimal = {
 					});
           
 				  $.ajax({
-					  	url: settings.host + "/api/v1/settings_injection.html",
+					  	url: settings.host + "/api/" + settings.api + "/settings_injection.html",
 					    beforeSend: function (xhr) {
 					  		xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 					  		xhr.setRequestHeader("Accept",        "text/html");
@@ -180,7 +181,9 @@ var AdsOptimal = {
                            $(this).attr("src", settings.host + $(this).attr("src"));
                         }
                    });
-                   $(ifrm.document).find("body>div").css("width", "800px");
+                   $(ifrm.document).find("body>div").each(function() {
+												this.style.setProperty("width", "940px", "important");
+								   });
                    AdsOptimal.settingsInput = $(ifrm.document).find("[name=\"adsoptimal_settings\"]");
                 }
                 
@@ -190,7 +193,8 @@ var AdsOptimal = {
                     "<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js\"></" + "script>" +
                     "<script type=\"text/javascript\">window.AdsOptimal = window.parent.AdsOptimal;" +
                     "</" + "script></head>" +
-                    "<body style=\"margin:0; background:none transparent;\" class=\"adsoptimal-injection-container\">" +
+                    "<body style=\"margin:0; background:none transparent;\" class=\"adsoptimal-injection-container\" onload=\"" +
+										"$(\'.item.active\').click();\">" +
                     "<form class=\"adsoptimal_form\" onsubmit=\"return AdsOptimal.savePostSettings(true);\">" +
                     "<input type=\"hidden\" name=\"adsoptimal_settings\" value=\"" + $(".adsoptimal_settings").val() + "\"></form>" +
                     response + "<" + "script>" +
@@ -245,6 +249,8 @@ $(document).ready(function() {
         oldFn.apply(this, args);
      }, 110);
   };
+  
+  $("#notification").hide();
 
   AdsOptimal.initialize();
 });
