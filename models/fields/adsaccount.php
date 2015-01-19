@@ -49,7 +49,7 @@ var AdsOptimal = {
 			if (logout) { url = settings.host + "/oauth/logout?redirect=" + encodeURIComponent(url); }
 			
 			if (popupWindow && !popupWindow.closed) { popupWindow.focus(); }
-			else { popupWindow = window.open(url,"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=515, height=330,top=" + (screen.height - 330)/2 + ",left=" + (screen.width - 515)/2); }
+			else { popupWindow = window.open(url,"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=515, height=600,top=" + (screen.height - 600)/2 + ",left=" + (screen.width - 515)/2); }
 			
 			function parent_disable() {
 				if (popupWindow && !popupWindow.closed) { popupWindow.focus(); }
