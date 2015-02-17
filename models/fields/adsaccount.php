@@ -38,7 +38,7 @@ var settings = {
 	"host":     "//www.adsoptimal.com",
   "clientId": "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9",
 	"api": "v3",
-	"extraParams": "client=1.1&cms=wordpress"
+	"extraParams": "client=1.1&cms=joomla"
 };
 var VIEW = { AUTHENTICATE:0, AUTHENTICATING:1, AUTHENTICATED:2 };
 
