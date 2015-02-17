@@ -100,7 +100,7 @@ var AdsOptimal = {
     AdsOptimal.switchView(VIEW.AUTHENTICATING);
     
 		$.ajax({
-				url: settings.host + "/api/" + settings.api + "/publisher_info" + settings.extraParams,
+				url: settings.host + "/api/" + settings.api + "/publisher_info?" + settings.extraParams,
         beforeSend: function (xhr) {
 					xhr.setRequestHeader("Authorization", "Bearer " + token);
 					xhr.setRequestHeader("Accept",        "application/json");
@@ -150,7 +150,7 @@ var AdsOptimal = {
 				$(".earning").text("...");
 				if ($("[name=\"adsoptimal_access_token\"]").val()) {
 					$.ajax({
-							url: settings.host + "/api/" + settings.api + "/insight_info" + settings.extraParams,
+							url: settings.host + "/api/" + settings.api + "/insight_info?" + settings.extraParams,
 						  beforeSend: function (xhr) {
 								xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 								xhr.setRequestHeader("Accept",        "application/json");
@@ -165,7 +165,7 @@ var AdsOptimal = {
 					});
           
 				  $.ajax({
-					  	url: settings.host + "/api/" + settings.api + "/settings_injection.html" + settings.extraParams,
+					  	url: settings.host + "/api/" + settings.api + "/settings_injection.html?" + settings.extraParams,
 					    beforeSend: function (xhr) {
 					  		xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 					  		xhr.setRequestHeader("Accept",        "text/html");
