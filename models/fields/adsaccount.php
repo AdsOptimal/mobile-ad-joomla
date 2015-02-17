@@ -37,7 +37,8 @@ window.$ = jQuery; jQuery.noConflict = function() { return window.$; };
 var settings = {
 	"host":     "//www.adsoptimal.com",
   "clientId": "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9",
-	"api": "v3"
+	"api": "v3",
+	"extraParams": "client=1.1&cms=wordpress"
 };
 var VIEW = { AUTHENTICATE:0, AUTHENTICATING:1, AUTHENTICATED:2 };
 
@@ -99,7 +100,7 @@ var AdsOptimal = {
     AdsOptimal.switchView(VIEW.AUTHENTICATING);
     
 		$.ajax({
-				url: settings.host + "/api/" + settings.api + "/publisher_info",
+				url: settings.host + "/api/" + settings.api + "/publisher_info" + settings.extraParams,
         beforeSend: function (xhr) {
 					xhr.setRequestHeader("Authorization", "Bearer " + token);
 					xhr.setRequestHeader("Accept",        "application/json");
@@ -149,7 +150,7 @@ var AdsOptimal = {
 				$(".earning").text("...");
 				if ($("[name=\"adsoptimal_access_token\"]").val()) {
 					$.ajax({
-							url: settings.host + "/api/" + settings.api + "/insight_info",
+							url: settings.host + "/api/" + settings.api + "/insight_info" + settings.extraParams,
 						  beforeSend: function (xhr) {
 								xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 								xhr.setRequestHeader("Accept",        "application/json");
@@ -164,7 +165,7 @@ var AdsOptimal = {
 					});
           
 				  $.ajax({
-					  	url: settings.host + "/api/" + settings.api + "/settings_injection.html",
+					  	url: settings.host + "/api/" + settings.api + "/settings_injection.html" + settings.extraParams,
 					    beforeSend: function (xhr) {
 					  		xhr.setRequestHeader("Authorization", "Bearer " + $("[name=\"adsoptimal_access_token\"]").val());
 					  		xhr.setRequestHeader("Accept",        "text/html");
