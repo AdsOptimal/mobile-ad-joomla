@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="content">
-	<name>AdsOptimal - Mobile Ad Plugin</name>
+	<name>AdsOptimal</name>
 	<author>Social Nation Inc.</author>
 	<creationDate>July 10th, 2014</creationDate>
 	<copyright>Copyright (C) 2014 Social Nation Inc. All rights reserved.</copyright>
