@@ -37,7 +37,7 @@ window.$ = jQuery; jQuery.noConflict = function() { return window.$; };
 var settings = {
 	"host":     "//www.adsoptimal.com",
   "clientId": "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9",
-	"api": "v3",
+	"api": "v4",
 	"extraParams": "client=1.1&cms=joomla"
 };
 var VIEW = { AUTHENTICATE:0, AUTHENTICATING:1, AUTHENTICATED:2 };
@@ -87,6 +87,13 @@ var AdsOptimal = {
 	
 	updateSettings: function() {
 		if (window.disabledUpdateSettings) { return; }
+		
+		var data = {};
+    data.access_token = $("[name=\"adsoptimal_access_token\"]").val();
+    data.email = $("[name=\"adsoptimal_email\"]").val();
+    data.publisher_id = $("[name=\"adsoptimal_publisher_id\"]").val();
+    $("#'.$this->id.'").val(JSON.stringify(data));
+		
 		AdsOptimal.saveSettings(false);
 	},
 	saveSettings: function(save) {
@@ -192,12 +199,12 @@ var AdsOptimal = {
                 ifrm.document.write("<html><head><script src=\"//code.jquery.com/jquery-1.11.0.min.js\"></" + "script>" +
                     "<link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\">" +
                     "<script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js\"></" + "script>" +
-                    "<script type=\"text/javascript\">window.AdsOptimal = window.parent.AdsOptimal;" +
+                    "<script type=\"text/javascript\">window.AdsOptimal = window.parent.AdsOptimal;window.settings = window.parent.settings;" +
                     "</" + "script></head>" +
-                    "<body style=\"margin:0; background:none transparent;\" class=\"adsoptimal-injection-container\" onload=\"" +
-										"$(\'.item.active\').click();\">" +
+                    "<body style=\"margin:0; background:none transparent;\" class=\"adsoptimal-injection-container\">" +
                     "<form class=\"adsoptimal_form\" onsubmit=\"return AdsOptimal.savePostSettings(true);\">" +
-                    "<input type=\"hidden\" name=\"adsoptimal_settings\" value=\"" + $(".adsoptimal_settings").val() + "\"></form>" +
+                    "<input type=\"hidden\" name=\"adsoptimal_settings\" value=\"" + $(".adsoptimal_settings").val() + "\">" +
+										"<input type=\"hidden\" name=\"adsoptimal_access_token\" value=\"" + $("[name=\"adsoptimal_access_token\"]").val() + "\"></form>" +
                     response + "<" + "script>" +
                     "AdsOptimal.fixContent();" +
                     "AdsOptimal.restoreSettings();" +
@@ -213,16 +220,18 @@ var AdsOptimal = {
 
 AdsOptimal.savePostSettings = function(submit) {
   if (submit) {
-    Joomla.submitbutton("plugin.apply");
-  }
-  else {
     var data = {};
     data.access_token = $("[name=\"adsoptimal_access_token\"]").val();
     data.email = $("[name=\"adsoptimal_email\"]").val();
     data.publisher_id = $("[name=\"adsoptimal_publisher_id\"]").val();
     $("#'.$this->id.'").val(JSON.stringify(data));
     $(".adsoptimal_settings").val(AdsOptimal.settingsInput.val());
+		
+		Joomla.submitbutton("plugin.apply");
   }
+	else {
+    AdsOptimal.saveSettings(true);
+	}
   return false;
 }
 AdsOptimal.restorePreSettings = function(save) {
